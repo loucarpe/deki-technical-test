@@ -2,7 +2,10 @@ import express, { Express, Request, Response } from 'express';
 import cors from 'cors';
 
 const app: Express = express();
-app.use(cors());
+
+app.options('*', cors({ origin: 'http://localhost:3000', optionsSuccessStatus: 200 }));
+app.use(cors({ origin: 'http://localhost:3000', optionsSuccessStatus: 200 }));
+
 const port = 8080;
 
 // Route exemple
